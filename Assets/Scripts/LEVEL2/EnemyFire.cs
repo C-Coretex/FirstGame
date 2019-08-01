@@ -50,7 +50,7 @@ public class EnemyFire : MonoBehaviour
             Move();
         }
 
-            RaycastHit2D hitInfo = Physics2D.Raycast(firePoint.position, firePoint.right);
+        RaycastHit2D hitInfo = Physics2D.Raycast(firePoint.position, firePoint.right);
         if (Time.time >= timestamp && CurrentWeaponType == WeaponType.Raycast)
         {
             Debug.Log("I'm calling RayCast");
@@ -58,7 +58,7 @@ public class EnemyFire : MonoBehaviour
             timestamp = Time.time + timeBetweenShots;
         }
         else if (Time.time >= timestamp && hitInfo.transform.name == "Player")
-            {
+        {
             if (CurrentWeaponType == WeaponType.PrefabStandart)
                 Shoot();
             else if (CurrentWeaponType == WeaponType.PrefabShotgun && isEnded == true)
@@ -68,7 +68,7 @@ public class EnemyFire : MonoBehaviour
             }
 
             timestamp = Time.time + timeBetweenShots;
-            }
+        }
 
         if (transform.position.y < -9)
             {
